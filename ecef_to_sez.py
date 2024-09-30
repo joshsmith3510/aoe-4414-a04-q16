@@ -44,12 +44,12 @@ if len(sys.argv)==7:
     o_z_km = float(sys.argv[3])
     x_km = float(sys.argv[4])
     y_km = float(sys.argv[5]) 
-    z_km = float(sys.argv[6])
+    zz_km = float(sys.argv[6])
     ...
 else:
     print(\
         'Usage: '\
-            'python3 o_x_km o_y_km o_z_km x_km y_km z_km ...'\
+            'python3 o_x_km o_y_km o_z_km x_km y_km zz_km ...'\
                 )
     exit()
 
@@ -58,7 +58,7 @@ else:
 # First step, determine ECEF vector from the station to the object
 ecef_x_km=x_km-o_x_km
 ecef_y_km=y_km-o_y_km
-ecef_z_km=z_km-o_z_km
+ecef_z_km=zz_km-o_z_km
 # plug origin values into ecef_to_llh.py to get lat lon and hae
 lon_rad = math.atan2(o_y_km,o_x_km)
 lon_deg = lon_rad*180.0/math.pi
@@ -100,4 +100,4 @@ s_km,e_km,zz_km=r_sez
 
 print(s_km)
 print(e_km)
-print(zz_km)
+print(z_km)
